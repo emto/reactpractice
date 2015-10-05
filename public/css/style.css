@@ -194,3 +194,41 @@ html, body {
   height: 30px;
   width: 30px;
 }
+
+.side-img {
+  height: 30px;
+}
+
+.side-label {
+  line-height: 30px;
+  color: #fff;
+  font-weight: 600;
+  margin-left: 8px;
+  vertical-align: top;
+}
+
+.module-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul {
+  color: #ccc;
+  list-style: none;
+  padding: 0px;
+}
+
+.left-part {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.filter-modules {
+  position: relative;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.filter-bar {
+  padding: 40px;
+}
