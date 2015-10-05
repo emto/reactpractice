@@ -1,0 +1,18 @@
+{
+  "name": "react-tutorial",
+  "version": "0.0.0",
+  "description": "React pls be kind",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node server.js"
+  },
+  "author": "emto",
+  "engines": {
+    "node" : "0.12.x"
+  }
+}
