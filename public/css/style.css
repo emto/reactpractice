@@ -226,9 +226,19 @@ ul {
 .filter-modules {
   position: relative;
   height: 50px;
+  padding-left: 20px;
   margin-bottom: 5px;
 }
 
 .filter-bar {
   padding: 40px;
+}
+
+.subtitle{
+  margin-left: 20px;
+  height: 30px;
+}
+
+a {
+  cursor: pointer;
 }

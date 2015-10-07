@@ -101,8 +101,8 @@ var Movie = React.createClass({
               <a href=""><img src="/assets/play.png" className="play-img" /></a>
             </div>
             <div className = "social">
-              <a href=""><img src="/assets/shared1.png" className="shared-img" /></a>
-              <a href=""><img src="/assets/green.png" className="shared-img" /></a>
+              <a href=""><img src="/assets/dabomb.png" className="shared-img" /></a>
+              <a href=""><img src="/assets/marley&me.png" className="shared-img" /></a>
             </div>
           </div>
           <div className = "movie-img">
@@ -143,7 +143,6 @@ var MovieNode = React.createClass({
       right: 200
     };
     var side = (this.props.side == "left") ? rightStyle : leftStyle;
-    console.log(side);
     return (
       <div className="movie-node" style={side}>
         <div className="movie-header">
