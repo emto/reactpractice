@@ -121,52 +121,119 @@ var Movie = React.createClass({
 });
 
 var MovieNode = React.createClass({
+  calculateStars: function() {
+    var starCount = [];
+    for (var i = 0; i < this.props.rating; i++) {
+      starCount.push(<img src="/assets/star_active.png" className="star" />);
+    }
+    for (var i = this.props.rating; i < 5; i++) {
+      starCount.push(<img src="/assets/star_inactive.png" className="star" />);
+    }
+    return starCount;
+  },
+  findPeople: function() {
+    var people = this.props.recommenders.map(function(rec) {
+      var image = rec.toLowerCase().concat('.png')
+      image = "/assets/cows/".concat(image);
+      return (
+        <img src={image} className="rec-img" />
+      );
+    });
+    return people
+  },
   render: function() {
+    var people = this.findPeople();
+    var ratingStar = this.calculateStars();
     var visibility = (this.props.visible) ? "" : "none";
     var leftStyle = {
       display: visibility,
-      left: 200
+      left: 145
     };
     var rightStyle = {
       display: visibility,
-      right: 200
+      right: 145
     };
     var side = (this.props.side == "left") ? rightStyle : leftStyle;
+    var actorLength = this.props.stars.length - 1;
+    var actorLinks = this.props.stars.map(function(star, index) {
+      if (index == actorLength) {
+        return(
+          <a href="">{star} </a>
+        );
+      } else {
+        return(
+          <span className="enclosure">
+            <a href="">{star}</a>
+            <span>, </span>
+          </span>
+        );
+      }
+    });
     return (
       <div className="movie-node" style={side}>
-        <div className="movie-header">
-          <div className="title">
-            {this.props.title}
-          </div>
-          <div className="runtime">
-            {this.props.time}
-          </div>
-        </div>
-        <div className="genre">
-          {this.props.genre}
-        </div>
-        <div className="synopsis">
-          {this.props.summary}
-        </div>
-        <div className="cast">
-          <div className="director">
-            {this.props.director}
-          </div>
-          <div className="actors">
-            {this.props.stars}
-          </div>
-        </div>
-        <div className="reviews">
-          <div className="rating">
-            {this.props.rating}
-          </div>
-          <div className="review-count">
-            {this.props.reviewCount}
-          </div>
-        </div>
-        <div className="recommendation">
-          {this.props.recommenders}
-        </div>
+        <ul className="movie-details">
+          <li>
+            <div className="title">
+              {this.props.title}
+            </div>
+            <div className="runtime">
+              {this.props.time.concat(" min")}
+            </div>
+          </li>
+          <li>
+            <div className="genre">
+              {this.props.genre.join(', ')}
+            </div>
+          </li>
+          <li>
+            <div className="synopsis">
+              {this.props.summary}
+            </div>
+          </li>
+          <li>
+            <div className="cast">
+              <div className="director">
+                <span className="movie-sub">
+                  Director:
+                </span>
+                <a href="">{this.props.director}</a>
+              </div>
+              <div className="actors">
+                <span className="movie-sub">
+                  Stars:
+                </span>
+                {actorLinks}
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="movie-line">
+            </div>
+          </li>
+          <li>
+            <div className="ratings">
+              {ratingStar}
+            </div>
+            <div className="reviews">
+              <div className="review-label">{this.props.reviewCount}</div>
+              <img src="/assets/reviews.png" className="review-img" />
+            </div>
+          </li>
+          <li>
+            <div className="movie-line">
+            </div>
+          </li>
+          <li>
+            <div className="recommendations">
+              <div className="rec-title">
+                Recommended by:
+              </div>
+              <div className="rec-people">
+                {people}
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     );
   }
