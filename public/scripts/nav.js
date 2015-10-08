@@ -5,9 +5,7 @@ var NavBox = React.createClass({
     };
   },
   onUpdate: function(val) {
-    console.log("lol");
     this.replaceState({activeTab: val});
-    console.log(this.state.activeTab);
   },
   render: function() {
     return (
