@@ -23,7 +23,7 @@ var FilterCategory = React.createClass({
     var menuNodes = this.props.data.map(function (node) {
       return (
         <ul className = "left-part">
-          <FilterNode activeTab={activeTab} onUpdate={x} type={node} />
+          <FilterNode key={node} activeTab={activeTab} onUpdate={x} type={node} />
         </ul>
       );
     });
@@ -51,7 +51,7 @@ var FilterNode = React.createClass({
     var x = this.props.onUpdate;
     var subNode = subCat.map(function(sub) {
       return (
-        <FilterSpecific activeTab={activeTab} onUpdate={x} title={sub}/>
+        <FilterSpecific key={sub} activeTab={activeTab} onUpdate={x} title={sub}/>
       );
     });
     return(
@@ -68,9 +68,7 @@ var FilterSpecific = React.createClass({
     return {highlight: false};
   },
   handleClick: function(tab) {
-    console.log(tab);
     this.setState({highlight: true});
-    console.log(this.state.highlight);
     this.props.onUpdate(tab);
   },
   findImage: function(title) {
@@ -107,5 +105,5 @@ var FilterSpecific = React.createClass({
 
 React.render(
   <NavBox items={ ['Main', 'Your Movie Circles', 'Collections'] } />,
-  document.getElementById('hello')
+  document.getElementById('navigation')
 );
