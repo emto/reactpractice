@@ -8,13 +8,12 @@ html, body {
   font-size: 10px;
 }
 
+/*Center component of page*/
 .center {
   margin: 0px 15%;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-}
-.content {
 }
 
 .adj {
@@ -27,23 +26,23 @@ html, body {
   height: 210px;
   background-color: #fff;
 }
-/*.content {
-  text-align: center;
-  width: 62%;
-}*/
+
 .movie-list {
   text-align: center;
   overflow-y: scroll;
   height: 82%;
   margin: 0px;
 }
+
 .movie-img img{
   width: 125px;
   border-radius: 8px;
 }
+
 .movie-info {
   text-align: left;
 }
+
 .movie-node {
   position: absolute;
   z-index: 1;
@@ -63,10 +62,12 @@ html, body {
 .info-title {
   font-weight: 600;
 }
+
 .info-sub {
   font-weight: 400;
   color: #aaa;
 }
+
 .blackout {
   position: absolute;
   height: 167px;
@@ -81,6 +82,8 @@ html, body {
 .time {
   display: block;
 }
+
+/*Page formatting (3 columns)*/
 
 .left-bar {
   float: left;
@@ -108,6 +111,7 @@ html, body {
 .main-title {
   font-size: 35px;
 }
+
 .red-bar {
   left: 0px;
   height: 125px;
@@ -134,10 +138,13 @@ html, body {
   height: 125px;
   background-color: #c4ccd9;
 }
+
 .right-full {
   overflow-y: scroll;
   height: 60%;
 }
+
+/*Search component*/
 .search-line {
   position: absolute;
   height: 30px;
@@ -154,6 +161,7 @@ html, body {
   height: 15px;
   width: 15px;
 }
+
 .search {
   vertical-align: top;
   width: 60%;
@@ -167,6 +175,7 @@ html, body {
   border-style: solid;
 }
 
+/*Movie hover over buttons*/
 .social {
   margin: 10px;
   position: absolute;
@@ -204,11 +213,13 @@ html, body {
   height: 40px;
   width: 40px;
 }
+
 .replay-img {
   height: 20px;
   width: 20px;
 }
 
+/*Left nav components*/
 .side-img {
   height: 20px;
 }
@@ -258,6 +269,7 @@ a {
   cursor: pointer;
 }
 
+/*Friend messaging module*/
 .friend-img {
   height: 30px;
 }
@@ -341,6 +353,7 @@ a {
 
 }
 
+/*Movie popover module*/
 .movie-details li {
   width: 100%;
 }
