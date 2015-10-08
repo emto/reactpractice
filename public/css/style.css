@@ -20,6 +20,7 @@ html, body {
   position: relative;
   display: inline-block;
 }
+
 .movie-box {
   display: inline-block;
   margin: 10px;
@@ -30,7 +31,7 @@ html, body {
 .movie-list {
   text-align: center;
   overflow-y: scroll;
-  height: 82%;
+  height: 88%;
   margin: 0px;
 }
 
